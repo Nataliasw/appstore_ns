@@ -9,4 +9,9 @@ public class Roles {
     public Roles(LinkedList<String> listOfJobTitles) {
         this.listOfJobTitles = listOfJobTitles;
     }
+
+    public boolean checkIfHasJobTitle(String jobTitle){
+        return listOfJobTitles.contains(jobTitle);
+    }
+
 }

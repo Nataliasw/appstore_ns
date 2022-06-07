@@ -65,9 +65,10 @@ public class Employee {
     public void addHolidays(int days){
         if(days + holidayDaysGranted > 26){
             System.out.println("You cannot add more than 26 days off");
-        }
+        } else{
         this.holidayDaysGranted += days;
         this.holidayDaysToUse += days;
+        }
     }
 
     public void useHolidays(int days) throws Exception{
@@ -83,11 +84,13 @@ public class Employee {
 
     }
 
-    public void changeJobTitle(String newJobTitle, Roles roles){
-
+    public void changeJobTitle(String newJobTitle, Roles roles) throws Exception{
         if(!roles.listOfJobTitles.contains(newJobTitle)){
-            System.out.println("We don't have this job title in the Database.");
+            throw new Exception("We don't have this job title in the Database.");
+
         }
+        this.jobTitle = newJobTitle;
+
     }
 
 
