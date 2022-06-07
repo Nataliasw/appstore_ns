@@ -16,9 +16,13 @@ public class Employee {
     public int holidayDaysToUse;
     private Double salary;
 
-    public Employee(String firstname, String lastname, String jobTitle, Date employmentDate, Double salary) {
+    public Employee(String firstname, String lastname, String jobTitle, Date employmentDate, Double salary, Roles roles) {
         this.firstname = firstname;
         this.lastname = lastname;
+        if(!roles.listOfJobTitles.contains(jobTitle)){
+            this.jobTitle = "";
+            System.out.println("Job title assigned as empty. Add job title to the job list");
+        }
         this.jobTitle = jobTitle;
         this.employmentDate = employmentDate;
         this.holidayDaysGranted = DEFAULT_DAYS_GRANTED;

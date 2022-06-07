@@ -12,8 +12,8 @@ public class Developer extends Employee{
     public LinkedList<Project> projects;
 
 
-    public Developer(String firstname, String lastname, String jobTitle, Date employmentDate, Double salary) {
-        super(firstname, lastname, jobTitle, employmentDate, salary);
+    public Developer(String firstname, String lastname, String jobTitle, Date employmentDate, Double salary, Roles roles) {
+        super(firstname, lastname, jobTitle, employmentDate, salary, roles);
     }
 
     public void assignProject(Project project) throws Exception{
